@@ -54,12 +54,7 @@ module frontRail(){
         }
 }
 
-module velcroBlock(){
-    difference(){
-    cube([4,6,20]);
-    translate([0,3,4])cube([4,3,12]);
-    }
-}
+
 module compartment(){
     
      //Text
@@ -128,22 +123,35 @@ module compartment(){
             translate([$batLength/2 + 60,-$batWidth / 2,$batHeight - 46])
                 cube([10,$wallSize * 4,15]);
                 
-            translate([$batLength/2 - 42,-$batWidth / 2,$batHeight - 12])
-                cube([30,$wallSize * 4,15]);
-            translate([$batLength/2 - 70,-$batWidth / 2,$batHeight - 12])
+            translate([$batLength/2 - 42 + 15,-$batWidth / 2,$batHeight - 12])
+                cube([15,$wallSize * 4,15]);
+            translate([$batLength/2 - 75,-$batWidth / 2,$batHeight - 12])
                 cube([10,$wallSize * 4,15]);
-            translate([$batLength/2 - 42,-$batWidth / 2,$batHeight - 46])
-                cube([30,$wallSize * 4,15]);
-            translate([$batLength/2 - 70,-$batWidth / 2,$batHeight - 46])
+            translate([$batLength/2 - 42 + 15,-$batWidth / 2,$batHeight - 46])
+                cube([15,$wallSize * 4,15]);
+            translate([$batLength/2 - 75,-$batWidth / 2,$batHeight - 46])
                 cube([10,$wallSize * 4,15]);
+            
+
         }
     }
+    
+    
+    //VELCRO
+    translate([$batLength/2 - 30,$batWidth / 2 + 5,$batHeight - 1])
+                cube([4,14,10]);    
+
+    translate([$batLength/2 - 30,$batWidth / 2 - 5,$batHeight - 1])
+                mirror([0,1,0])cube([4,14,10]);
+    
+    translate([$batLength/2 - 30,$batWidth / 2 - 25,$batHeight + $wallSize*2 - 3])
+                mirror([1,0,0])cube([22,50,10]);   
+    
+    
         
             translate([$batLength/2 - 20,$batWidth/2 - 5,$batHeight + $wallSize * 2 - 0.5])linear_extrude(height = 5)text("Twirre");
     }
-    
 
-    
 
     //Rails
     translate([0,-$wallSize,$batHeight/2]) rail(145);    
@@ -152,15 +160,15 @@ module compartment(){
     translate([0,$batWidth / 2,-$wallSize]) rotate([90,0,0]) rail(145);    
 
 
-    translate([-$wallSize,-$wallSize - 6,-$wallSize]) velcroBlock();
-    translate([-$wallSize,-$wallSize - 6,$batHeight - 20 + $wallSize]) velcroBlock();
-    
+    //translate([-$wallSize,-$wallSize - 6,-$wallSize]) velcroBlock();
+    //translate([-$wallSize,-$wallSize - 6,$batHeight - 20 + $wallSize]) velcroBlock();
+    /*
     translate([0,$batWidth,0]){
         mirror([0,1,0]){
             translate([-$wallSize,-$wallSize - 6,-$wallSize]) velcroBlock();
             translate([-$wallSize,-$wallSize - 6,$batHeight - 20 + $wallSize]) velcroBlock();
         }
-    }
+    }*/
 }
 
 
