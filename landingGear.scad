@@ -9,8 +9,8 @@ module landingGear_Base($boltDia = 2.5, $text="Twirre"){
         polygon( points=[
             [-2,-2],
             [17,-2],
-            [33,35],
-            [-2,35],
+            [33.5,36],
+            [-2,36],
         ]);
     
 translate([-5,0.89,-2.1])rotate([1.22,0,0])mirror([0,1,0])cube([50,10,50]);
@@ -20,13 +20,13 @@ translate([-5,0.89,-2.1])rotate([1.22,0,0])mirror([0,1,0])cube([50,10,50]);
      
         translate([10,20,15])rotate([90,0,0])cylinder(d=$boltDia, 50, $fn=10);
     
-        translate([14,20,32])rotate([90,0,0])cylinder(d=$boltDia, 50, $fn=10);   
+        translate([14,20,32.5])rotate([90,0,0])cylinder(d=$boltDia, 50, $fn=10);   
         
         
             
     translate([10,9.6,15])rotate([90,0,0])cylinder(d=5, 2, $fn=6);        
             
-    translate([14,9.6,32])rotate([90,0,0])cylinder(d=5, 2, $fn=6);
+    translate([14,9.6,32.5])rotate([90,0,0])cylinder(d=5, 2, $fn=6);
     
     
         translate([22,8.8,22])
@@ -47,13 +47,13 @@ module landingGear_BaseLid($boltDia = 2.5, $text="Twirre"){
         polygon( points=[
             [-2,-2],
             [17,-2],
-            [33,35],
-            [-2,35],
+            [33.5,36],
+            [-2,36],
         ]);
     
             translate([10,20,15])rotate([90,0,0])cylinder(d=2.4, 50, $fn=10);
     
-        translate([14,20,32])rotate([90,0,0])cylinder(d=2.1, 50, $fn=10);
+        translate([14,20,32.5])rotate([90,0,0])cylinder(d=2.1, 50, $fn=10);
         
         dji_f550_leg(); 
         
