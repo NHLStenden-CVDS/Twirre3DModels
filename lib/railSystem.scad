@@ -1,6 +1,4 @@
 module rail($length, $spacing = true){
-    
-    
     $height = 15;
     $partWidth = 5;
     
@@ -28,23 +26,23 @@ module rail($length, $spacing = true){
 }
 
 
-module railMount($width){
+module railMount($width, $onlyPart = 0){
     difference(){
         union(){
     
-            translate([0,-10,-3])cube([$width,9,13]);
-            translate([0,-10,-11.5])cube([$width,9,7.5]);
+            if($onlyPart!=1)translate([0,-10,-3])cube([$width,9,13]);
+            if($onlyPart!=2)translate([0,-10,-11.5])cube([$width,9,7.5]);
         }
     
     translate([-1,0,0])rail($width + 2, false);
     translate([-1,0,-1.5])rail($width + 2, false);
         
     translate([3.5,-7.5,-15])
-        cylinder(d=2.1,50, $fn=10);
+        cylinder(d=2.3,50, $fn=10);
     translate([$width - 3.5,-7.5,-15])
-        cylinder(d=2.1,50, $fn=10);
-    translate([3.5,-7.5,8.5])cylinder(d=5,1.6,$fn=6);
-    translate([$width - 3.5,-7.5,8.5])cylinder(d=5,1.6,$fn=6);
+        cylinder(d=2.3,50, $fn=10);
+    translate([3.5,-7.5,-11.6])cylinder(d=5,1.6,$fn=6);
+    translate([$width - 3.5,-7.5,-11.6])cylinder(d=5,1.6,$fn=6);
             
     translate([-1,-2,-6])cube([$width + 2,2,12]);
     }
