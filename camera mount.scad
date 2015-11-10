@@ -8,6 +8,7 @@ module IDScamMountHor(){
             translate([0,-17,-36/2])cube([3,6,36]);
             translate([0,-16,-3])cube([3,6,13]);
         }
+        translate([10,-25,0])cylinder(d=20,20);
         //Mounting holes
         translate([-1,-14,15.1])rotate([0,90,0])cylinder(d=3.1, 20, $fn=10);
         translate([-1,-14,-15.1])rotate([0,90,0])cylinder(d=3.1, 20, $fn=10);
@@ -29,6 +30,7 @@ module IDScamMountVer(){
                 translate([0,-16,-20/2])cube([3,6,20]);
             }
         }
+        translate([10,-25,0])cylinder(d=20,20);
         //Mounting holes
         translate([20/2,0,7])
         rotate([0,-90,0]){
@@ -40,5 +42,5 @@ module IDScamMountVer(){
 }
 
 
-//IDScamMountVer();
-IDScamMountHor();
+IDScamMountVer();
+//IDScamMountHor();
