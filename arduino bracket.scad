@@ -11,11 +11,30 @@ module arduino(){
     translate([0,50.8 + 24.1,0])    
         cylinder(d=3,20,$fn=10);//Topright
     
+    //Bottomleft
+//BottomRight
     
-    translate([15.2+27.9+5.1,-1.3,0])
-        cylinder(d=3,20,$fn=10);//Bottomleft
-    translate([15.2+27.9+5.1,-1.3 + 82.5,0])
-        cylinder(d=3,20,$fn=10);//BottomRight
+    
+    
+    translate([15.2,24.8,0])
+        cylinder(d=3,20,$fn=10);
+    translate([15.2 + 27.9,24.8,0]) 
+        cylinder(d=3,20,$fn=10);   
+}
+
+module arduinoCap(){
+    difference(){
+    translate([0,0,-3/2])
+        cube([33,33,3],center=true);
+    translate([-27.9/2,26/2,-10])
+        cylinder(d=3,20,$fn=10);
+    translate([27.9/2,26/2,-10]) 
+        cylinder(d=3,20,$fn=10);
+    translate([-27.9/2,-26/2,-10])
+        cylinder(d=3,20,$fn=10);
+    translate([27.9/2,-26/2,-10]) 
+        cylinder(d=3,20,$fn=10);  
+    }
 }
 
 
@@ -50,5 +69,7 @@ dji_f550_hubTop_seg();
 translate([104,37,-10])rotate([0,0,-180])arduino();
 }
 
+translate([25,0,0])
+arduinoCap();
 
 
