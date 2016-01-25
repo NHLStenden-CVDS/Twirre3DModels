@@ -86,6 +86,7 @@ module landingGear_leg($height = 70, $taper = 3){
             [-2 + 5,-2 - $height],
         ]);
         
+        /*
         //SPRING
         translate([0,10,0])
         rotate([90,0,0])
@@ -104,7 +105,7 @@ module landingGear_leg($height = 70, $taper = 3){
             [3,-9],
             [17,-11],
         ]);
-        
+        */
 
         //SIDE HOLES
         translate([0,10,0])
@@ -126,6 +127,7 @@ module landingGear_leg($height = 70, $taper = 3){
             [17 - 5,-$height/2 - 4],
             [-2 + 5,-$height/2 - 4],
         ]);
+        
         
         //TAPER
         translate([-25,-1,-2])
