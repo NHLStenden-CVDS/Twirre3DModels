@@ -1,4 +1,4 @@
-$thickness = 3;
+$thickness = 2.8;
 
 module hook(){
     difference(){
