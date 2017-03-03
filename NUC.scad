@@ -126,7 +126,7 @@ module _board_connectors_left(){
 
 module _board_cooling(){
     holeDia = 35;
-    translate([boardWidth/2,boardLength/2 - holeDia/2])
+    translate([boardWidth/2 + 5,boardLength/2 - holeDia/2])
     circle(d=holeDia);
 }
 
