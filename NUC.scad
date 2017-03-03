@@ -493,13 +493,24 @@ module _case_base_3d(){
     }
 }
 
+module CASE(){
+    _case_wall_3d();
+    _case_base_3d();
+}
+
+module COVER(){
+    _case_cover_3d();
+}
 
 
-
-translate([motherboard_offset_x,motherboard_offset_y])color("green")linear_extrude(25)_preview_motherboard();
-_case_wall_3d();
-_case_base_3d();
+module PREVIEW(){
+    translate([motherboard_offset_x,motherboard_offset_y])color("green")linear_extrude(25)_preview_motherboard();
 
 
+    CASE();
+    translate([0,0,170]) COVER(); 
+}
 
-translate([0,0,170])_case_cover_3d();
+CASE();
+//rotate([180,0,0])
+//COVER();
